@@ -20,7 +20,7 @@
     .kpi-card.online{border-left-color:#27ae60}.kpi-card.online .value{color:#27ae60}
     .kpi-card.offline{border-left-color:#e74c3c}.kpi-card.offline .value{color:#e74c3c}
     .kpi-card.total{border-left-color:#3498db}.kpi-card.total .value{color:#3498db}
-    .kpi-card.rate{border-left-color:#e74c3c}.kpi-card.rate .value{color:#e74c3c}
+    .kpi-card.rate{border-left-color:#27ae60}.kpi-card.rate .value{color:#27ae60}
     .controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;background-color:#fff;padding:15px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.08)}
     .tab-nav button{ font-size: 1.1em; padding:10px 15px;border:none;background-color:transparent;color:#555;cursor:pointer;border-bottom:3px solid transparent;margin-right:10px;font-weight:600 }
     .tab-nav button.active{color:#3498db;border-bottom-color:#3498db}
@@ -66,36 +66,29 @@
     <header>
         <div class="container">
             <h1>Comunicação da Frota</h1>
-            <p class="subtitle">UNIAO - Gerado em 17/11/2025 às 18:43:21</p>
+            <p class="subtitle">UNIAO - Gerado em 17/11/2025 às 19:43:59</p>
         </div>
     </header>
 
     <div class="main-content container">
         <div class="kpi-container">
-            <div class="kpi-card online"><span class="value">2</span><span class="label">Ativos</span></div>
-            <div class="kpi-card offline"><span class="value">1</span><span class="label">Inativos</span></div>
+            <div class="kpi-card online"><span class="value">3</span><span class="label">Ativos</span></div>
+            <div class="kpi-card offline"><span class="value">0</span><span class="label">Inativos</span></div>
             <div class="kpi-card total"><span class="value">3</span><span class="label">Total Frota</span></div>
-            <div class="kpi-card rate"><span class="value">66.7%</span><span class="label">Taxa de Comunicação</span></div>
+            <div class="kpi-card rate"><span class="value">100.0%</span><span class="label">Taxa de Comunicação</span></div>
         </div>
 
         <div class="controls">
             <div class="tab-nav">
-                <button onclick="showTab('inativos')" class="active">Inativos (1)</button>
-                <button onclick="showTab('ativos')">Ativos (2)</button>
+                <button onclick="showTab('inativos')" class="active">Inativos (0)</button>
+                <button onclick="showTab('ativos')">Ativos (3)</button>
             </div>
             </div>
 
         <div id="inativos" class="tab-content active">
             <table>
                 <thead><tr><th>Status</th><th>Prefixo</th><th>Última Comunicação</th><th>Ações</th></tr></thead>
-                <tbody id="inativos-body">
-                    <tr class="veiculo-item" data-veiculo-nome="19609">
-                        <td><span class="status status-offline">OFFLINE (1d 1h)</span></td>
-                        <td><strong>19609</strong></td>
-                        <td>🌤️ 16/11/2025 17:01</td>
-                        <td><a href="#" class="details-link" onclick="showVehicleDetails('19609')">Detalhes</a></td>
-                    </tr>
-                </tbody>
+                <tbody id="inativos-body"></tbody>
             </table>
             <div class="no-results" id="no-results-inativos">Nenhum veículo inativo encontrado.</div>
         </div>
@@ -106,7 +99,14 @@
                         <span class="vehicle-prefix">19601</span>
                         <span class="vehicle-status status-online">ONLINE</span>
                     </div>
-                    <span class="timestamp">Última: 🌆 17/11/2025 18:14</span>
+                    <span class="timestamp">Última: 🌆 17/11/2025 19:15</span>
+                </div>
+                <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="19609" onclick="showVehicleDetails('19609')">
+                    <div class="vehicle-header">
+                        <span class="vehicle-prefix">19609</span>
+                        <span class="vehicle-status status-online">ONLINE</span>
+                    </div>
+                    <span class="timestamp">Última: 🌆 17/11/2025 19:35</span>
                 </div>
                 <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="19612" onclick="showVehicleDetails('19612')">
                     <div class="vehicle-header">
@@ -130,7 +130,7 @@
 
 <script>
     const veiculoData = {"19601": {"serie": "67494.0", "versao": "91.13", "eod": "212.0"}, "19609": {"serie": "67501.0", "versao": "91.13", "eod": "212.0"}, "19612": {"serie": "66374.0", "versao": "91.13", "eod": "212.0"}};
-    const comunicacoesData = {"19601": [{"dataHora": "17/11/2025 18:14:54", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 17:44:30", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 17:15:31", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 16:44:02", "tempoSegundos": "14.0"}, {"dataHora": "17/11/2025 16:14:55", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 15:43:42", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 15:13:55", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 14:42:03", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 14:11:38", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 13:41:22", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 13:10:42", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 12:40:16", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 12:09:58", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:39:59", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:10:14", "tempoSegundos": "10.0"}], "19609": [{"dataHora": "16/11/2025 17:01:43", "tempoSegundos": "20.0"}, {"dataHora": "16/11/2025 16:31:13", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:00:58", "tempoSegundos": "10.0"}], "19612": [{"dataHora": "17/11/2025 17:38:38", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 17:07:48", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 16:38:10", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 16:08:23", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 15:37:10", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 15:05:19", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 14:36:21", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 14:05:57", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 13:34:45", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 13:05:32", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 12:35:06", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 12:04:33", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:34:09", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:04:25", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:55:57", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:44:10", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:13:55", "tempoSegundos": "10.0"}, {"dataHora": "17/11/2025 09:43:39", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 09:13:25", "tempoSegundos": "9.0"}, {"dataHora": "16/11/2025 17:01:22", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:31:07", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:00:53", "tempoSegundos": "12.0"}]};
+    const comunicacoesData = {"19601": [{"dataHora": "17/11/2025 19:15:47", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 18:45:22", "tempoSegundos": "11.0"}, {"dataHora": "17/11/2025 18:14:54", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 17:44:30", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 17:15:31", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 16:44:02", "tempoSegundos": "14.0"}, {"dataHora": "17/11/2025 16:14:55", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 15:43:42", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 15:13:55", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 14:42:03", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 14:11:38", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 13:41:22", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 13:10:42", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 12:40:16", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 12:09:58", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:39:59", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:10:14", "tempoSegundos": "10.0"}], "19609": [{"dataHora": "17/11/2025 19:35:26", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 19:05:02", "tempoSegundos": "10.0"}, {"dataHora": "16/11/2025 17:01:43", "tempoSegundos": "20.0"}, {"dataHora": "16/11/2025 16:31:13", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:00:58", "tempoSegundos": "10.0"}], "19612": [{"dataHora": "17/11/2025 17:38:38", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 17:07:48", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 16:38:10", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 16:08:23", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 15:37:10", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 15:05:19", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 14:36:21", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 14:05:57", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 13:34:45", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 13:05:32", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 12:35:06", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 12:04:33", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:34:09", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:04:25", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:55:57", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:44:10", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:13:55", "tempoSegundos": "10.0"}, {"dataHora": "17/11/2025 09:43:39", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 09:13:25", "tempoSegundos": "9.0"}, {"dataHora": "16/11/2025 17:01:22", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:31:07", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:00:53", "tempoSegundos": "12.0"}]};
     let currentTab = 'inativos';
     function showTab(tabName) {
         currentTab = tabName;
