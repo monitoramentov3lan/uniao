@@ -7,86 +7,37 @@
         font-size: 16px; line-height: 1.6;
         display:flex; flex-direction:column; min-height:100vh
     }
-    
-    .container {
-        width: 95%;
-        max-width: 1600px; /* Define a largura máxima do dashboard */
-        margin: 0 auto; /* Centraliza o dashboard */
-    }
-
-    header{background-color:#fff;border-bottom:1px solid #ddd;padding:15px 0;
-        box-shadow:0 1px 3px rgba(0,0,0,.05)
-    }
-    
-    /* <<< CORREÇÃO DE CENTRALIZAÇÃO */
-    header .container { 
-        padding: 0 20px; 
-        text-align: center; 
-    }
-    
+    .container { width: 95%; max-width: 1600px; margin: 0 auto; }
+    header{background-color:#fff;border-bottom:1px solid #ddd;padding:15px 0; box-shadow:0 1px 3px rgba(0,0,0,.05) }
+    header .container { padding: 0 20px; text-align: center; }
     h1{margin:0;color:#2c3e50;font-size:1.5em}
     .subtitle{font-size:.9em;color:#7f8c8d;margin-top:2px}
     .main-content{flex:1; padding: 20px 0;}
-    
     .kpi-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:20px}
-    .kpi-card{background-color:#fff;border-radius:8px;padding:20px;box-shadow:0 2px 4px rgba(0,0,0,.08);border-left:5px solid;
-        text-align: center;
-    }
-    .kpi-card .value{
-        font-size: 2.2em; font-weight: 700;
-        display:block;margin-bottom:5px
-    }
-    .kpi-card .label{
-        font-size: 1em; color:#555;text-transform:uppercase;
-        letter-spacing: 0.5px;
-    }
+    .kpi-card{background-color:#fff;border-radius:8px;padding:20px;box-shadow:0 2px 4px rgba(0,0,0,.08);border-left:5px solid; text-align: center; }
+    .kpi-card .value{ font-size: 2.2em; font-weight: 700; display:block;margin-bottom:5px }
+    .kpi-card .label{ font-size: 1em; color:#555;text-transform:uppercase; letter-spacing: 0.5px; }
     .kpi-card.online{border-left-color:#27ae60}.kpi-card.online .value{color:#27ae60}
     .kpi-card.offline{border-left-color:#e74c3c}.kpi-card.offline .value{color:#e74c3c}
     .kpi-card.total{border-left-color:#3498db}.kpi-card.total .value{color:#3498db}
-    .kpi-card.rate{border-left-color:#27ae60}.kpi-card.rate .value{color:#27ae60}
-    
+    .kpi-card.rate{border-left-color:#e74c3c}.kpi-card.rate .value{color:#e74c3c}
     .controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;background-color:#fff;padding:15px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.08)}
-    .tab-nav button{
-        font-size: 1.1em; padding:10px 15px;border:none;background-color:transparent;color:#555;cursor:pointer;border-bottom:3px solid transparent;margin-right:10px;font-weight:600
-    }
+    .tab-nav button{ font-size: 1.1em; padding:10px 15px;border:none;background-color:transparent;color:#555;cursor:pointer;border-bottom:3px solid transparent;margin-right:10px;font-weight:600 }
     .tab-nav button.active{color:#3498db;border-bottom-color:#3498db}
-    .search-box{display:flex;gap:10px}
     #search{padding:10px 15px;border-radius:6px;border:1px solid #ddd;font-size:1em;width:300px}
     .toggle-dark-mode{padding:10px 15px;border:none;border-radius:6px;background-color:#7f8c8d;color:white;cursor:pointer;font-size:1em;transition:background-color .3s}
     .toggle-dark-mode:hover{background-color:#5f6f7d}
-    
     .tab-content{display:none;background-color:#fff;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.08);overflow:hidden}
     .tab-content.active{display:block}
-    
     table{width:100%;border-collapse:collapse}
-    th,td{
-        padding: 14px 16px;
-        border-bottom:1px solid #eee;
-        font-size: 0.95em;
-        text-align: center; /* <<< CORREÇÃO DE CENTRALIZAÇÃO */
-    }
-    
-    /* (Alinha a primeira coluna (Status) e a segunda (Prefixo) de volta à esquerda) */
-    th:first-child, td:first-child,
-    th:nth-child(2), td:nth-child(2) {
-        text-align: left;
-    }
-    
-    th{
-        background-color:#f9f9f9;
-        font-size: .9em; text-transform:uppercase;color:#555;
-        font-weight: 700;
-    }
+    th,td{ padding: 14px 16px; border-bottom:1px solid #eee; font-size: 0.95em; text-align: center; }
+    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+    th{ background-color:#f9f9f9; font-size: .9em; text-transform:uppercase;color:#555; font-weight: 700; }
     tr:hover{background-color:#f5f7fa}
-    .status{
-        font-weight: 700; padding:4px 8px;border-radius:12px;color:white;font-size:.85em;text-align:center;
-        min-width: 110px; 
-        display: inline-block;
-    }
+    .status{ font-weight: 700; padding:4px 8px;border-radius:12px;color:white;font-size:.85em;text-align:center; min-width: 110px; display: inline-block; }
     .status-offline{background-color:#e74c3c}
     .details-link{color:#3498db;text-decoration:none;font-weight:600}
     .details-link:hover{text-decoration:underline}
-    
     .grid-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px;padding:20px}
     .vehicle{background-color:#fdfdfd;padding:15px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.05);cursor:pointer;transition:all .3s;border:1px solid #eee}
     .vehicle:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.08)}
@@ -95,7 +46,6 @@
     .vehicle-status{font-size:.8em;padding:3px 8px;border-radius:12px;text-transform:uppercase}
     .vehicle-status.status-online{background-color:rgba(39,174,96,.1);color:#27ae60}
     .timestamp{display:block;font-size:13px;color:#7f8c8d}
-    
     .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);overflow:auto;animation:fadeIn .3s}
     .modal-content{background-color:#fefefe;margin:5% auto;padding:25px;border-radius:10px;width:85%;max-width:800px;box-shadow:0 5px 20px rgba(0,0,0,.2);animation:slideIn .3s}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -109,103 +59,69 @@
     .periodo-emoji{margin-right:8px}
     .no-results{text-align:center;padding:30px;color:#7f8c8d;font-style:italic;display:none}
     .dark-mode{background-color:#1a1a1a;color:#e0e0e0}.dark-mode header,.dark-mode .kpi-card,.dark-mode .controls,.dark-mode .tab-content{background-color:#2d2d2d;color:#e0e0e0;border-color:#444}.dark-mode h1,.dark-mode .modal-header h2{color:#f5f5f5}.dark-mode .tab-nav button{color:#aaa}.dark-mode .tab-nav button.active{color:#3498db;border-bottom-color:#3498db}.dark-mode #search{background-color:#333;color:#fff;border-color:#444}.dark-mode .toggle-dark-mode{background-color:#555}.dark-mode .kpi-card{box-shadow:0 2px 4px rgba(0,0,0,.3)}.dark-mode table, .dark-mode th, .dark-mode td{border-color:#444}.dark-mode th{background-color:#333;color:#ccc}.dark-mode tr:nth-child(even){background-color:#2a2a2a}.dark-mode tr:hover{background-color:#3a3a3a}.dark-mode .vehicle{background-color:#333;border-color:#444;box-shadow:0 1px 3px rgba(0,0,0,.2)}.dark-mode .vehicle-prefix{color:#eee}.dark-mode .modal-content{background-color:#2d2d2d}.dark-mode .modal-header{border-color:#444}.dark-mode .vehicle-details strong{color:#aaa}.dark-mode .comunicacoes-list{background-color:#252525;border-color:#444}.dark-mode .comunicacao-item{border-bottom-color:#444}.dark-mode .close:hover{color:white}
-    .dark-mode th:first-child, .dark-mode td:first-child,
-    .dark-mode th:nth-child(2), .dark-mode td:nth-child(2) {
-        text-align: left;
-    }
+    .dark-mode th:first-child, .dark-mode td:first-child, .dark-mode th:nth-child(2), .dark-mode td:nth-child(2) { text-align: left; }
 </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Dashboard de Comunicação da Frota</h1>
-            <p class="subtitle">UNIAO - Gerado em 10/11/2025 às 01:11:39</p>
+            <h1>Comunicação da Frota</h1>
+            <p class="subtitle">UNIAO - Gerado em 17/11/2025 às 11:43:11</p>
         </div>
     </header>
 
     <div class="main-content container">
         <div class="kpi-container">
-            <div class="kpi-card online">
-                <span class="value">3</span>
-                <span class="label">Ativos</span>
-            </div>
-            <div class="kpi-card offline">
-                <span class="value">0</span>
-                <span class="label">Inativos</span>
-            </div>
-            <div class="kpi-card total">
-                <span class="value">3</span>
-                <span class="label">Total Frota</span>
-            </div>
-            <div class="kpi-card rate">
-                <span class="value">100.0%</span>
-                <span class="label">Taxa de Comunicação</span>
-            </div>
+            <div class="kpi-card online"><span class="value">2</span><span class="label">Ativos</span></div>
+            <div class="kpi-card offline"><span class="value">1</span><span class="label">Inativos</span></div>
+            <div class="kpi-card total"><span class="value">3</span><span class="label">Total Frota</span></div>
+            <div class="kpi-card rate"><span class="value">66.7%</span><span class="label">Taxa de Comunicação</span></div>
         </div>
 
         <div class="controls">
             <div class="tab-nav">
-                <button onclick="showTab('inativos')" class="active">Inativos (0)</button>
-                <button onclick="showTab('ativos')">Ativos (3)</button>
+                <button onclick="showTab('inativos')" class="active">Inativos (1)</button>
+                <button onclick="showTab('ativos')">Ativos (2)</button>
             </div>
-            <div class="search-box">
-                <input type="text" id="search" placeholder="Buscar veículo..." onkeyup="searchVehicle()">
-                <button class="toggle-dark-mode" onclick="toggleDarkMode()">Modo Escuro</button>
             </div>
-        </div>
 
         <div id="inativos" class="tab-content active">
             <table>
-                <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Prefixo</th>
-                        <th>Última Comunicação</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Status</th><th>Prefixo</th><th>Última Comunicação</th><th>Ações</th></tr></thead>
                 <tbody id="inativos-body">
-                    
+                    <tr class="veiculo-item" data-veiculo-nome="19609">
+                        <td><span class="status status-offline">OFFLINE (18h 41m)</span></td>
+                        <td><strong>19609</strong></td>
+                        <td>🌤️ 16/11/2025 17:01</td>
+                        <td><a href="#" class="details-link" onclick="showVehicleDetails('19609')">Detalhes</a></td>
+                    </tr>
                 </tbody>
             </table>
             <div class="no-results" id="no-results-inativos">Nenhum veículo inativo encontrado.</div>
         </div>
-
         <div id="ativos" class="tab-content">
             <div class="grid-container" id="ativos-body">
-                
-                <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="19609" onclick="showVehicleDetails('19609')">
+                <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="19601" onclick="showVehicleDetails('19601')">
                     <div class="vehicle-header">
-                        <span class="vehicle-prefix">19609</span>
+                        <span class="vehicle-prefix">19601</span>
                         <span class="vehicle-status status-online">ONLINE</span>
                     </div>
-                    <span class="timestamp">Última: 🌙 10/11/2025 00:44</span>
-                </div>
-                <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="19610" onclick="showVehicleDetails('19610')">
-                    <div class="vehicle-header">
-                        <span class="vehicle-prefix">19610</span>
-                        <span class="vehicle-status status-online">ONLINE</span>
-                    </div>
-                    <span class="timestamp">Última: 🌙 10/11/2025 01:08</span>
+                    <span class="timestamp">Última: ☀️ 17/11/2025 11:39</span>
                 </div>
                 <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="19612" onclick="showVehicleDetails('19612')">
                     <div class="vehicle-header">
                         <span class="vehicle-prefix">19612</span>
                         <span class="vehicle-status status-online">ONLINE</span>
                     </div>
-                    <span class="timestamp">Última: 🌙 10/11/2025 00:44</span>
-                </div>
-            </div>
+                    <span class="timestamp">Última: ☀️ 17/11/2025 11:34</span>
+                </div></div>
             <div class="no-results" id="no-results-ativos">Nenhum veículo ativo encontrado.</div>
         </div>
     </div>
 
     <div id="vehicleModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Detalhes do Veículo</h2>
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
+            <div class="modal-header"><h2 id="modalTitle">Detalhes do Veículo</h2><span class="close" onclick="closeModal()">&times;</span></div>
             <div class="vehicle-details" id="vehicleDetails"></div>
             <h3>Histórico de Comunicações</h3>
             <div class="comunicacoes-list" id="comunicacoesList"></div>
@@ -213,46 +129,36 @@
     </div>
 
 <script>
-    const veiculoData = {"19609": {"serie": "67501.0", "versao": "91.13", "eod": "209.0"}, "19610": {"serie": "67057.0", "versao": "91.13", "eod": "209.0"}, "19612": {"serie": "66374.0", "versao": "91.13", "eod": "209.0"}};
-    const comunicacoesData = {"19609": [{"dataHora": "10/11/2025 00:44:21", "tempoSegundos": "17.0"}, {"dataHora": "10/11/2025 00:13:55", "tempoSegundos": "32.0"}, {"dataHora": "09/11/2025 23:43:13", "tempoSegundos": "19.0"}, {"dataHora": "09/11/2025 23:12:46", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 22:42:28", "tempoSegundos": "27.0"}, {"dataHora": "09/11/2025 22:10:45", "tempoSegundos": "24.0"}, {"dataHora": "09/11/2025 21:39:52", "tempoSegundos": "11.0"}, {"dataHora": "09/11/2025 21:07:15", "tempoSegundos": "20.0"}, {"dataHora": "09/11/2025 20:37:34", "tempoSegundos": "33.0"}, {"dataHora": "09/11/2025 20:07:55", "tempoSegundos": "16.0"}, {"dataHora": "09/11/2025 19:36:11", "tempoSegundos": "80.0"}, {"dataHora": "09/11/2025 19:04:34", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 18:55:50", "tempoSegundos": "178.0"}, {"dataHora": "09/11/2025 18:23:03", "tempoSegundos": "20.0"}, {"dataHora": "09/11/2025 17:51:38", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 17:22:19", "tempoSegundos": "14.0"}, {"dataHora": "09/11/2025 16:52:13", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 16:21:40", "tempoSegundos": "12.0"}, {"dataHora": "09/11/2025 15:51:09", "tempoSegundos": "10.0"}, {"dataHora": "09/11/2025 15:20:41", "tempoSegundos": "17.0"}, {"dataHora": "09/11/2025 14:49:55", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 14:20:26", "tempoSegundos": "13.0"}, {"dataHora": "09/11/2025 13:49:04", "tempoSegundos": "14.0"}, {"dataHora": "09/11/2025 13:20:01", "tempoSegundos": "23.0"}, {"dataHora": "09/11/2025 13:10:03", "tempoSegundos": "170.0"}, {"dataHora": "09/11/2025 12:36:56", "tempoSegundos": "11.0"}, {"dataHora": "09/11/2025 12:05:48", "tempoSegundos": "19.0"}, {"dataHora": "09/11/2025 11:34:21", "tempoSegundos": "17.0"}, {"dataHora": "09/11/2025 11:03:46", "tempoSegundos": "14.0"}, {"dataHora": "09/11/2025 10:34:26", "tempoSegundos": "75.0"}, {"dataHora": "09/11/2025 10:02:57", "tempoSegundos": "29.0"}, {"dataHora": "09/11/2025 09:53:57", "tempoSegundos": "174.0"}, {"dataHora": "09/11/2025 09:07:07", "tempoSegundos": "15.0"}, {"dataHora": "09/11/2025 08:36:32", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 08:06:06", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 07:37:16", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 07:06:52", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 06:35:40", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 06:05:18", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 05:35:20", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 05:03:45", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 04:34:47", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 04:04:31", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 03:35:35", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 03:03:44", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 02:33:11", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 02:03:57", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 01:33:30", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 01:03:05", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 00:32:46", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 00:02:30", "tempoSegundos": "8.0"}], "19610": [{"dataHora": "10/11/2025 01:08:27", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 00:38:13", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 00:07:58", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 23:37:43", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 23:07:28", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 22:37:14", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 22:06:59", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 21:36:23", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 21:05:20", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 20:36:22", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 20:07:10", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 19:35:37", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 19:05:13", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 18:35:22", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 18:05:47", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 17:34:35", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 17:05:23", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 16:33:58", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 16:03:34", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 15:33:10", "tempoSegundos": "9.0"}, {"dataHora": "09/11/2025 15:04:12", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 05:49:39", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 05:21:07", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 04:51:00", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 04:20:35", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 03:50:20", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 03:19:57", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 02:47:59", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 02:19:00", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 01:48:22", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 01:17:57", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 00:47:31", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 00:17:14", "tempoSegundos": "8.0"}], "19612": [{"dataHora": "10/11/2025 00:44:50", "tempoSegundos": "8.0"}, {"dataHora": "10/11/2025 00:14:35", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 23:44:21", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 23:14:06", "tempoSegundos": "8.0"}, {"dataHora": "09/11/2025 22:43:50", "tempoSegundos": "12.0"}]};
+    const veiculoData = {"19601": {"serie": "67494.0", "versao": "91.13", "eod": "212.0"}, "19609": {"serie": "67501.0", "versao": "91.13", "eod": "212.0"}, "19612": {"serie": "66374.0", "versao": "91.13", "eod": "212.0"}};
+    const comunicacoesData = {"19601": [{"dataHora": "17/11/2025 11:39:59", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:10:14", "tempoSegundos": "10.0"}], "19609": [{"dataHora": "16/11/2025 17:01:43", "tempoSegundos": "20.0"}, {"dataHora": "16/11/2025 16:31:13", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:00:58", "tempoSegundos": "10.0"}], "19612": [{"dataHora": "17/11/2025 11:34:09", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 11:04:25", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:55:57", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:44:10", "tempoSegundos": "8.0"}, {"dataHora": "17/11/2025 10:13:55", "tempoSegundos": "10.0"}, {"dataHora": "17/11/2025 09:43:39", "tempoSegundos": "9.0"}, {"dataHora": "17/11/2025 09:13:25", "tempoSegundos": "9.0"}, {"dataHora": "16/11/2025 17:01:22", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:31:07", "tempoSegundos": "8.0"}, {"dataHora": "16/11/2025 16:00:53", "tempoSegundos": "12.0"}]};
     let currentTab = 'inativos';
-
     function showTab(tabName) {
         currentTab = tabName;
         document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
         document.getElementById(tabName).classList.add('active');
         document.querySelectorAll('.tab-nav button').forEach(btn => btn.classList.remove('active'));
         document.querySelector(`.tab-nav button[onclick="showTab('${tabName}')"]`).classList.add('active');
-        searchVehicle();
+        // searchVehicle(); // (Desabilitado pois não há input search no HTML)
     }
-
+    /*
     function searchVehicle() {
         const searchTerm = document.getElementById('search').value.toLowerCase();
         const containerId = currentTab + '-body';
         const noResultsId = 'no-results-' + currentTab;
-        
         const items = document.getElementById(containerId).querySelectorAll('.veiculo-item');
         let hasResults = false;
-        
         items.forEach(item => {
             const veiculoId = item.getAttribute('data-veiculo-nome').toLowerCase();
             const matchesSearch = searchTerm === '' || veiculoId.includes(searchTerm);
-            
             if (matchesSearch) {
                 item.style.display = (currentTab === 'inativos') ? 'table-row' : 'block';
                 hasResults = true;
-            } else {
-                item.style.display = 'none';
-            }
+            } else { item.style.display = 'none'; }
         });
-
         document.getElementById(noResultsId).style.display = hasResults ? 'none' : 'block';
     }
-
-    function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-    }
-    
+    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
+    */
     const modal = document.getElementById('vehicleModal');
     function showVehicleDetails(prefixo) {
         const modalTitle = document.getElementById('modalTitle');
@@ -260,7 +166,6 @@
         const comunicacoesList = document.getElementById('comunicacoesList');
         const veiculo = veiculoData[prefixo] || {};
         const comunicacoes = comunicacoesData[prefixo] || [];
-        
         modalTitle.textContent = `Veículo ${prefixo}`;
         vehicleDetails.innerHTML = `
             <div><strong>Prefixo:</strong> ${prefixo}</div>
@@ -280,11 +185,7 @@
         } else { comunicacoesList.innerHTML = '<div>Nenhuma comunicação registrada</div>'; }
         modal.style.display = 'block';
     }
-    
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-    
+    function closeModal() { modal.style.display = 'none'; }
     function getPeriodoEmoji(date) {
         if (!date || isNaN(date)) return '';
         const hora = date.getHours();
@@ -293,11 +194,8 @@
         if (hora >= 12 && hora < 18) return "🌤️";
         return "🌆";
     }
-    
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
+        if (event.target == modal) { modal.style.display = 'none'; }
     }
     document.addEventListener('DOMContentLoaded', () => {
         showTab('inativos');
