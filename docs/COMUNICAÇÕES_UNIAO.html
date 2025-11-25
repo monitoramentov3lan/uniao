@@ -66,22 +66,22 @@
     <header>
         <div class="container">
             <h1>Comunicação da Frota</h1>
-            <p class="subtitle">UNIAO - Gerado em 25/11/2025 às 06:39:48</p>
+            <p class="subtitle">UNIAO - Gerado em 25/11/2025 às 07:39:47</p>
         </div>
     </header>
 
     <div class="main-content container">
         <div class="kpi-container">
-            <div class="kpi-card online"><span class="value">0</span><span class="label">Ativos</span></div>
-            <div class="kpi-card offline"><span class="value">3</span><span class="label">Inativos</span></div>
+            <div class="kpi-card online"><span class="value">1</span><span class="label">Ativos</span></div>
+            <div class="kpi-card offline"><span class="value">2</span><span class="label">Inativos</span></div>
             <div class="kpi-card total"><span class="value">3</span><span class="label">Total Frota</span></div>
-            <div class="kpi-card rate"><span class="value">0.0%</span><span class="label">Taxa de Comunicação</span></div>
+            <div class="kpi-card rate"><span class="value">33.3%</span><span class="label">Taxa de Comunicação</span></div>
         </div>
 
         <div class="controls">
             <div class="tab-nav">
-                <button onclick="showTab('inativos')" class="active">Inativos (3)</button>
-                <button onclick="showTab('ativos')">Ativos (0)</button>
+                <button onclick="showTab('inativos')" class="active">Inativos (2)</button>
+                <button onclick="showTab('ativos')">Ativos (1)</button>
             </div>
             </div>
 
@@ -90,21 +90,14 @@
                 <thead><tr><th>Status</th><th>Prefixo</th><th>Última Comunicação</th><th>Ações</th></tr></thead>
                 <tbody id="inativos-body">
                     <tr class="veiculo-item" data-veiculo-nome="19601">
-                        <td><span class="status status-offline">OFFLINE (11h 2m)</span></td>
+                        <td><span class="status status-offline">OFFLINE (12h 2m)</span></td>
                         <td><strong>19601</strong></td>
                         <td>🌆 24/11/2025 19:37</td>
                         <td><a href="#" class="details-link" onclick="showVehicleDetails('19601')">Detalhes</a></td>
                     </tr>
                 
-                    <tr class="veiculo-item" data-veiculo-nome="19610">
-                        <td><span class="status status-offline">OFFLINE (11h 33m)</span></td>
-                        <td><strong>19610</strong></td>
-                        <td>🌆 24/11/2025 19:06</td>
-                        <td><a href="#" class="details-link" onclick="showVehicleDetails('19610')">Detalhes</a></td>
-                    </tr>
-                
                     <tr class="veiculo-item" data-veiculo-nome="19612">
-                        <td><span class="status status-offline">OFFLINE (10h 48m)</span></td>
+                        <td><span class="status status-offline">OFFLINE (11h 48m)</span></td>
                         <td><strong>19612</strong></td>
                         <td>🌆 24/11/2025 19:51</td>
                         <td><a href="#" class="details-link" onclick="showVehicleDetails('19612')">Detalhes</a></td>
@@ -114,7 +107,14 @@
             <div class="no-results" id="no-results-inativos">Nenhum veículo inativo encontrado.</div>
         </div>
         <div id="ativos" class="tab-content">
-            <div class="grid-container" id="ativos-body"></div>
+            <div class="grid-container" id="ativos-body">
+                <div class="vehicle vehicle-online veiculo-item" data-veiculo-nome="19610" onclick="showVehicleDetails('19610')">
+                    <div class="vehicle-header">
+                        <span class="vehicle-prefix">19610</span>
+                        <span class="vehicle-status status-online">ONLINE</span>
+                    </div>
+                    <span class="timestamp">Última: ☀️ 25/11/2025 07:23</span>
+                </div></div>
             <div class="no-results" id="no-results-ativos">Nenhum veículo ativo encontrado.</div>
         </div>
     </div>
@@ -130,7 +130,7 @@
 
 <script>
     const veiculoData = {"19601": {"serie": "67494.0", "versao": "91.13", "eod": "212.0"}, "19610": {"serie": "67057.0", "versao": "91.13", "eod": "212.0"}, "19612": {"serie": "66374.0", "versao": "91.13", "eod": "212.0"}};
-    const comunicacoesData = {"19601": [{"dataHora": "24/11/2025 19:37:38", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 04:34:43", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 04:05:05", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 03:34:39", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 03:04:51", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 02:34:27", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 02:04:03", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 01:33:39", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 01:03:53", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 00:32:39", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 00:02:53", "tempoSegundos": "8.0"}], "19610": [{"dataHora": "24/11/2025 19:06:11", "tempoSegundos": "9.0"}], "19612": [{"dataHora": "24/11/2025 19:51:16", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 19:20:48", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 18:50:22", "tempoSegundos": "9.0"}]};
+    const comunicacoesData = {"19601": [{"dataHora": "24/11/2025 19:37:38", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 04:34:43", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 04:05:05", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 03:34:39", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 03:04:51", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 02:34:27", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 02:04:03", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 01:33:39", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 01:03:53", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 00:32:39", "tempoSegundos": "8.0"}, {"dataHora": "24/11/2025 00:02:53", "tempoSegundos": "8.0"}], "19610": [{"dataHora": "25/11/2025 07:23:10", "tempoSegundos": "8.0"}, {"dataHora": "25/11/2025 06:52:30", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 19:06:11", "tempoSegundos": "9.0"}], "19612": [{"dataHora": "24/11/2025 19:51:16", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 19:20:48", "tempoSegundos": "9.0"}, {"dataHora": "24/11/2025 18:50:22", "tempoSegundos": "9.0"}]};
     let currentTab = 'inativos';
     function showTab(tabName) {
         currentTab = tabName;
